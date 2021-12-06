@@ -2,7 +2,7 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <img style="height: 90px; width: 110px;" src="https://rc-car-online.de/public/bilder/upload/r/15886024345eb026425c415.png" alt="icoon"/>
             </a>
         </x-slot>
 
@@ -50,6 +50,13 @@
                 <x-button class="ml-3">
                     {{ __('Log in') }}
                 </x-button>
+
+                <p>or</p>
+
+                <a class="register-button" href="/register">
+                    {{ __('Register') }}
+                </a>
+
             </div>
         </form>
     </x-auth-card>

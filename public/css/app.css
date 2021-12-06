@@ -32137,6 +32137,30 @@ select {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.mt-4 p{
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.bg-white{
+  background-color: lightgreen;
+}
+
+.register-button{
+  background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  letter-spacing: 0.1em;
+  border-radius: 5px;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -188576,4 +188600,3 @@ select {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
-
