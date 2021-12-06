@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <img style="height: 40px; width: 40px;" src="https://www.shareicon.net/data/512x512/2016/01/15/703864_cards_512x512.png" alt="icoon">
+                        <img style="height: 60px; width: 75px;" src="https://rc-car-online.de/public/bilder/upload/r/15886024345eb026425c415.png" alt="icoon">
                     </a>
                 </div>
 
@@ -40,6 +40,11 @@
                     </x-slot>
 
                     <x-slot name="content">
+
+                        <x-dropdown-link :href="route('profile')">
+                            {{ __('Mijn Profiel') }}
+                        </x-dropdown-link>
+
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
@@ -82,6 +87,11 @@
             </div>
 
             <div class="mt-3 space-y-1">
+
+                <x-responsive-nav-link :href="route('profile')">
+                    {{ __('Mijn Profiel') }}
+                </x-responsive-nav-link>
+
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
