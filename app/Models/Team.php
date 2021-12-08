@@ -10,7 +10,8 @@ class Team extends Model
     use HasFactory;
     protected $table = 'teams';
 
-    public function team1(){
-
-    }
+    protected $fillable = [
+        'name',
+        'creator_id',
+    ];
 }

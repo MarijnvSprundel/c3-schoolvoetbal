@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TournementController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,7 +29,7 @@ Route::get('/aboutus', function () {
 })->middleware(['auth'])->name('aboutus');
 
 Route::get('/tournaments', function () {
-    return view('tournaments');
+    return (new TournementController)->index();
 })->middleware(['auth'])->name('tournaments');
 
 require __DIR__.'/auth.php';

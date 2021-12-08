@@ -11,16 +11,14 @@ class Game extends Model
 {
     use HasFactory;
     protected $table = 'games';
+
     protected $fillable = [
-        'id',
         'team1_id',
         'team2_id',
         'team1_score',
         'team2_score',
         'field_id',
         'referee_id',
-        'created_at',
-        'updated_at'
     ];
 
     public function team1(){
