@@ -19,4 +19,8 @@ class Team extends Model
         'created_at',
         'updated_at',
     ];
+
+    public function creator(){
+        return $this->hasOne(User::class,'id', 'creator_id');
+    }
 }
