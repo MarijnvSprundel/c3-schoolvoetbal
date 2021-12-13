@@ -4,6 +4,9 @@ use App\Http\Controllers\TournamentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GamesController;
 
+use App\Http\Controllers\TeamsController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,10 +18,7 @@ use App\Http\Controllers\GamesController;
 |
 */
 
-
-Route::get('/', [GamesController::class, 'index'])->middleware(['auth'])->name('dashboard');;
-
-//Route::get('/', [TournamentController::class, 'dashboard'])->middleware(['auth']);
+Route::get('/', [TournamentController::class, 'dashboard'])->middleware(['auth']);
 
 Route::get('/dashboard', [TournamentController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 
@@ -29,5 +29,12 @@ Route::get('/aboutus', function () {
 })->middleware(['auth'])->name('aboutus');
 
 Route::get('/tournaments', [TournamentController::class, 'index'])->middleware(['auth'])->name('tournaments');
+
+// Route::group(['prefix' => 'dashboard', 'middleware' => 'auth', 'as' => 'dashboard.'], function(){
+//     Route::resource('teams', TeamsController::class);
+// });
+// Route::get('/dashboard/teams', [TeamsController::class, 'index'])->middleware(['auth'])->name('teams');
+
+Route::resource('/teams', TeamsController::class);
 
 require __DIR__.'/auth.php';
