@@ -15,17 +15,12 @@ use App\Http\Controllers\GamesController;
 |
 */
 
-<<<<<<< HEAD
+
 Route::get('/', [GamesController::class, 'index'])->middleware(['auth'])->name('dashboard');;
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
-=======
-Route::get('/', [TournamentController::class, 'dashboard'])->middleware(['auth']);
+//Route::get('/', [TournamentController::class, 'dashboard'])->middleware(['auth']);
 
 Route::get('/dashboard', [TournamentController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
->>>>>>> 3443924e5efa1c7cb206c95999b623c40f500713
 
 Route::view('profile', 'profile')->name('profile');
 
