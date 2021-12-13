@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\TournementController;
+use App\Http\Controllers\TournamentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,13 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-})->middleware(['auth']);
+Route::get('/', [TournamentController::class, 'dashboard'])->middleware(['auth']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [TournamentController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 
 Route::view('profile', 'profile')->name('profile');
 
@@ -28,8 +24,6 @@ Route::get('/aboutus', function () {
     return view('aboutus');
 })->middleware(['auth'])->name('aboutus');
 
-Route::get('/tournaments', function () {
-    return (new TournementController)->index();
-})->middleware(['auth'])->name('tournaments');
+Route::get('/tournaments', [TournamentController::class, 'index'])->middleware(['auth'])->name('tournaments');
 
 require __DIR__.'/auth.php';

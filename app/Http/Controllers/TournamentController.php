@@ -7,7 +7,7 @@ use App\Models\Team;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 
-class TournementController extends Controller
+class TournamentController extends Controller
 {
     private $key;
 
@@ -19,7 +19,14 @@ class TournementController extends Controller
     public function index(){
         //$this->fetchMatches();
         return view('tournaments')
-            ->with('tournaments',Game::all());
+            ->with('tournaments', Game::all());
+    }
+
+    public function dashboard(){
+        //$this->fetchMatches();
+        return view('dashboard')
+            ->with('games', Game::all())
+            ->with('teams', Team::all());
     }
 
     public function fetchMatches(){
