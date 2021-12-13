@@ -4,8 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use app\Models\User;
-use mysql_xdevapi\Table;
 
 class Game extends Model
 {
@@ -19,13 +17,14 @@ class Game extends Model
         'team2_score',
         'field_id',
         'referee_id',
+        'datetime',
     ];
 
     public function team1(){
-        return Team::where('id', $this->team_id1)->get();
+        return $this->hasOne(Team::class, 'id', 'team1_id');
     }
     public function team2(){
-        return Team::where('id', $this->team_id2)->get();
+        return $this->hasOne(Team::class, 'id', 'team2_id');
     }
 
 }

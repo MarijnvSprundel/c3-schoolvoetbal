@@ -32161,6 +32161,13 @@ select {
   border-radius: 5px;
 }
 
+.match{
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -188600,3 +188607,4 @@ select {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
+

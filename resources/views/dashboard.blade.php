@@ -14,15 +14,15 @@
                             <p>Er zijn geen wedstrijden</p>
                         @else
                             @foreach ($games as $game)
-                                <div>
+                                <div class="match">
                                     <p>{{ $game->team1->name }} - {{ $game->team2->name }}</p>
-                                    <p>{{ $game->datetime }}</p>
+                                    <p>{{ $game->datetime == null ? "Onbekend" : $game->datetime }}</p>
                                 </div>
                             @endforeach
                         @endif
                     </div>
 
-                    {{-- <div class="teams">
+                    <div class="teams">
                         @if (count($teams) == 0)
                             <p>Er zijn geen teams</p>
                         @else
@@ -30,7 +30,7 @@
                                     <p>{{ $team->name }}</p>
                             @endforeach
                         @endif
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </div>
