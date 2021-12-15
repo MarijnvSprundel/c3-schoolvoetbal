@@ -23,16 +23,18 @@
 
                     <form method="post" action="{{route('teams.store')}}">
                         @csrf
+                        <div class="create-form">
+                            <div class="textbox-create">
+                                <div class="form-group">
+                                    <label for="name">Naam team:</label>
+                                    <input type="text" name="name" class="form-control" id="">
+                                </div>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="name">Naam</label>
-                            <input type="text" name="name" class="form-control" id="">
+                            <div class="form-group">
+                                <input class="standard-button" type="submit" value="Opslaan">
+                            </div>
                         </div>
-
-                        <div class="form-group">
-                            <input class="mt-4 btn btn-primary" type="submit" value="Opslaan">
-                        </div>
-
                     </form>
 
                 </div>

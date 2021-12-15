@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <img style="height: 60px; width: 75px;" src="https://rc-car-online.de/public/bilder/upload/r/15886024345eb026425c415.png" alt="icoon">
+                        <img style="height: 60px; width: 75px;" src="https://media.discordapp.net/attachments/913060850716270653/917335307806969926/4S-Logo-Transparent.png" alt="icoon">
                     </a>
                 </div>
 
