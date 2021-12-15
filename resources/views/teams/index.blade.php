@@ -9,7 +9,9 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <h2>Huidige teams</h2>
+                    <div class="teamindex-title">
+                        <h2>Huidige teams</h2>
+                    </div>
                     <div class="table-wrapper">
                         <table class="fl-table">
                             <thead>
@@ -31,7 +33,7 @@
                         </table>
                     </div>
 
-                    <a href="{{ route('teams.create') }}" class="btn btn-primary">Nieuw team aanmaken</a>
+                    <a href="{{ route('teams.create') }}" class="page-button">Nieuw team aanmaken</a>
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <img style="height: 90px; width: 110px;" src="https://media.discordapp.net/attachments/913060850716270653/917335307806969926/4S-Logo-Transparent.png" alt="icoon"/>
+                <img style="height: 80px; width: 90px;" src="https://media.discordapp.net/attachments/913060850716270653/917335307806969926/4S-Logo-Transparent.png" alt="icoon"/>
             </a>
         </x-slot>
 

@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <img style="height: 60px; width: 75px;" src="https://media.discordapp.net/attachments/913060850716270653/917335307806969926/4S-Logo-Transparent.png" alt="icoon">
+                        <img style="width:50px" src="https://media.discordapp.net/attachments/913060850716270653/917335307806969926/4S-Logo-Transparent.png" alt="icoon">
                     </a>
                 </div>
 
