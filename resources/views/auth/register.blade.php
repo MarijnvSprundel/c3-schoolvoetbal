@@ -2,7 +2,7 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <img style="height: 90px; width: 110px;" src="https://rc-car-online.de/public/bilder/upload/r/15886024345eb026425c415.png" alt="icoon"/>
+                <img style="height: 90px; width: 110px;" src="https://media.discordapp.net/attachments/913060850716270653/917335307806969926/4S-Logo-Transparent.png" alt="icoon"/>
             </a>
         </x-slot>
 

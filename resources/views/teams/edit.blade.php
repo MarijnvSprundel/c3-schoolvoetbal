@@ -24,23 +24,25 @@
                         <form method="post" action="{{route('teams.edit', $team->id)}}">
                             @csrf
                             @method("PUT")
-                            <div class="form-group">
-                                <label for="name">Naam</label>
-                                <input type="text" value="{{$team->name}}" name="name" class="form-control" id="">
-                            </div>
-
-                            <div class="form-group">
-                                <input class="mt-4 btn btn-primary" type="submit" value="Aanpassen">
+                            <div class="textbox-create">
+                                <div class="form-group">
+                                    <label for="name">Naam team:</label>
+                                    <input type="text" value="{{$team->name}}" name="name" class="form-control" id="">
+                                </div>
                             </div>
 
                         </form>
+                        <div class="two-buttons">
+                            <div class="form-group">
+                                <input class="standard-button" type="submit" value="Aanpassen">
+                            </div>
 
-                        <form action="{{route('teams.destroy', $team->id)}}" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <input type="submit" value="Verwijderen" class="btn btn-danger">
-                        </form>
-
+                            <form action="{{route('teams.destroy', $team->id)}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit" value="Verwijderen" class="delete-button">
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
