@@ -16,7 +16,8 @@ class TeamsController extends Controller
     public function index()
     {
         $teams = Team::all();
-        return view('teams/index')->with('teams', $teams);
+        return view('teams/index')
+            ->with('teams', $teams)->with('user', Auth::user());
     }
 
     /**
@@ -58,7 +59,7 @@ class TeamsController extends Controller
     public function show($id)
     {
         $teams = Team::findOrFail($id);
-        return view('teams/show')->with('team', $team);
+        return view('teams/show')->with('team', $teams);
     }
 
     /**
@@ -70,6 +71,10 @@ class TeamsController extends Controller
     public function edit($id)
     {
         $team = Team::findOrFail($id);
+        if (!Auth::user()->is_admin && $team->creator_id != Auth::id()){
+            return redirect(route('teams.index'));
+        }
+
         return view('teams.edit')
             ->with('team', $team);
     }
@@ -83,13 +88,17 @@ class TeamsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $team = Team::findOrFail($id);
+        if (!Auth::user()->is_admin && $team->creator_id != Auth::id()){
+            return redirect(route('teams.index'));
+        }
+
         $this->validate($request, [
             'name' => 'required'
         ]);
 
-        $event = Event::findOrFail($id);
-        $event->name = $request->name;
-        $event->save();
+        $team->name = $request->name;
+        $team->save();
 
         return back();
     }
@@ -102,7 +111,19 @@ class TeamsController extends Controller
      */
     public function destroy($id)
     {
-        Team::destroy($id);
+        $team = Team::findOrFail($id);
+        if (!Auth::user()->is_admin && $team->creator_id != Auth::id()){
+            return redirect(route('teams.index'));
+        }
+
+        foreach ($team->gamesAsTeam1 as $game){
+            $game->delete();
+        }
+        foreach ($team->gamesAsTeam2 as $game){
+            $game->delete();
+        }
+        $team->delete();
+
         return redirect()->route('teams.index');
     }
 }

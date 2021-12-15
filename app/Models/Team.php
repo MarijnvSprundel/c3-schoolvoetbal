@@ -20,6 +20,12 @@ class Team extends Model
         'updated_at',
     ];
 
+    public function gamesAsTeam1(){
+        return $this->hasMany(Game::class, 'team1_id', 'id');
+    }
+    public function gamesAsTeam2(){
+        return $this->hasMany(Game::class, 'team2_id', 'id');
+    }
     public function creator(){
         return $this->hasOne(User::class,'id', 'creator_id');
     }

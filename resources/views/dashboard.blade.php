@@ -20,8 +20,8 @@
                                 </div>
                             @endforeach
                         @endif
-                    </div>
 
+                </div>
                     <div class="teams">
                         @if (count($teams) == 0)
                             <p>Er zijn geen teams</p>
