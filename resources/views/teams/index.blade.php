@@ -22,13 +22,18 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($teams as $team)
-                                <tr>
-                                    <td>{{$team->id}}</td>
-                                    <td><a href="{{ route('teams.edit', ['team'=>$team]) }}">{{$team->name}}</td>
-                                    <td>{{$team->creator->name}}</td>
-                                </tr>
-                            @endforeach
+                                @foreach($teams as $team)
+                                    <tr>
+                                        <td>{{$team->id}}</td>
+                                        <td>
+                                            @if($user->is_admin || $team->creator_id == $user->id)
+                                                <a href="{{ route('teams.edit', ['team'=>$team]) }}">{{$team->name}}</td>
+                                            @else
+                                                {{$team->name}}
+                                            @endif
+                                        <td>{{$team->creator->name}}</td>
+                                    </tr>
+                                @endforeach
                             <tbody>
                         </table>
                     </div>

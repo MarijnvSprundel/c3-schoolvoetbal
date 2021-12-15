@@ -21,7 +21,7 @@
                             </div>
                         @endif
 
-                        <form method="post" action="{{route('teams.edit', $team->id)}}">
+                        <form method="post" action="{{route('teams.update', $team->id)}}">
                             @csrf
                             @method("PUT")
                             <div class="textbox-create">

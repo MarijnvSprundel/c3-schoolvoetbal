@@ -18,15 +18,13 @@ use App\Http\Controllers\TeamsController;
 |
 */
 
-Route::get('/', [TournamentController::class, 'dashboard'])->middleware(['auth']);
-
-Route::get('/dashboard', [TournamentController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
-
-Route::view('profile', 'profile')->name('profile');
+Route::get('/', [TournamentController::class, 'dashboard'])->name('dashboard');
 
 Route::get('/aboutus', function () {
     return view('aboutus');
-})->middleware(['auth'])->name('aboutus');
+})->name('aboutus');
+
+Route::view('/profile', 'profile')->name('profile');
 
 Route::get('/tournaments', [TournamentController::class, 'index'])->middleware(['auth'])->name('tournaments');
 
