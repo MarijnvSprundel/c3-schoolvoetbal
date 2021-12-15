@@ -35,6 +35,12 @@
 
                         </form>
 
+                        <form action="{{route('teams.destroy', $team->id)}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <input type="submit" value="Verwijderen" class="btn btn-danger">
+                        </form>
+
                     </div>
                 </div>
             </div>

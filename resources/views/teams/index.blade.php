@@ -9,24 +9,45 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Naam</th>
-                            <th>Creator</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @foreach($teams as $team)
+{{--                    <table class="table">--}}
+{{--                            <thead>--}}
+{{--                            <tr>--}}
+{{--                                <th>Id</th>--}}
+{{--                                <th>Naam</th>--}}
+{{--                                <th>Creator</th>--}}
+{{--                            </tr>--}}
+{{--                            </thead>--}}
+{{--                        <tbody>--}}
+{{--                        @foreach($teams as $team)--}}
+{{--                            <tr>--}}
+{{--                                <td>{{$team->id}}</a></td>--}}
+{{--                                <td><a href="{{ route('teams.edit', ['team'=>$team]) }}">{{$team->name}}</td>--}}
+{{--                                <td>{{$team->creator->name}}</td>--}}
+{{--                            </tr>--}}
+{{--                        @endforeach--}}
+{{--                        </tbody>--}}
+{{--                    </table>--}}
+                    <h2>Huidige teams</h2>
+                    <div class="table-wrapper">
+                        <table class="fl-table">
+                            <thead>
                             <tr>
-                                <td>{{$team->id}}</a></td>
-                                <td><a href="{{ route('teams.edit', ['team'=>$team]) }}">{{$team->name}}</td>
-                                <td>{{$team->creator->name}}</td>
+                                <th>Team ID</th>
+                                <th>Team Naam</th>
+                                <th>Creator</th>
                             </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                            @foreach($teams as $team)
+                                <tr>
+                                    <td>{{$team->id}}</td>
+                                    <td><a href="{{ route('teams.edit', ['team'=>$team]) }}">{{$team->name}}</td>
+                                    <td>{{$team->creator->name}}</td>
+                                </tr>
+                            @endforeach
+                            <tbody>
+                        </table>
+                    </div>
 
                     <a href="{{ route('teams.create') }}" class="btn btn-primary">Nieuw team aanmaken</a>
                 </div>
