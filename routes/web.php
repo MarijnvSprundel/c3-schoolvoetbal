@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TournamentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GamesController;
@@ -31,5 +32,7 @@ Route::view('/profile', 'profile')->name('profile');
 Route::get('/tournaments', [TournamentController::class, 'index'])->middleware(['auth'])->name('tournaments');
 
 Route::resource('/teams', TeamsController::class);
+
+Route::resource('/admin', AdminController::class)->middleware(['auth']);
 
 require __DIR__.'/auth.php';

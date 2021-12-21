@@ -9,18 +9,6 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-{{--                    <div class="matches">--}}
-{{--                        @if (count($games) == 0)--}}
-{{--                            <p>Er zijn geen wedstrijden</p>--}}
-{{--                        @else--}}
-{{--                            @foreach ($games as $game)--}}
-{{--                                <div class="match">--}}
-{{--                                    <p>{{ $game->team1->name }} - {{ $game->team2->name }}</p>--}}
-{{--                                    <p>{{ $game->datetime == null ? "Onbekend" : $game->datetime }}</p>--}}
-{{--                                </div>--}}
-{{--                            @endforeach--}}
-{{--                        @endif--}}
-{{--                </div>--}}
                     <div class="match_today container" id="match_today">
                         @if (count($games) == 0)
                             <p>Er zijn momenteel geen wedstrijden.</p>
