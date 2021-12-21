@@ -52,10 +52,8 @@
 /*table*/
 
 .table-wrapper{
-    margin: 10px 70px 70px;
-    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+    margin: 20px 0;
 }
-
 .fl-table {
     border-radius: 5px;
     font-size: 12px;
@@ -67,30 +65,25 @@
     white-space: nowrap;
     background-color: white;
 }
-
 .fl-table td, .fl-table th {
     text-align: center;
     padding: 8px;
 }
-
-.fl-table td {
-    border-right: 1px solid #f8f8f8;
-    font-size: 12px;
-}
-
 .fl-table thead th {
-    color: black;
-    background: whitesmoke;
-}
-
-
-.fl-table thead th:nth-child(odd) {
     color: #ffffff;
-    background: #8fed8f;
+    background: #00ab00;
+    border: 1px solid black;
 }
-
-.fl-table tr:nth-child(even) {
-    background: #F8F8F8;
+.fl-table tr {
+    border: 2px solid black;
+    transition: background-color 100ms ease-in-out;
+}
+.fl-table tr:hover {
+    background-color: #ececec;
+    cursor: pointer;
+}
+.fl-table td {
+    border: 1px solid black;
 }
 
 /* Responsive */
