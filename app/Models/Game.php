@@ -27,4 +27,10 @@ class Game extends Model
         return $this->hasOne(Team::class, 'id', 'team2_id');
     }
 
+    public function field(){
+        return $this->hasOne(Field::class, 'id', 'field_id');
+    }
+
+
+
 }
