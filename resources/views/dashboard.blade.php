@@ -13,11 +13,11 @@
                         @if (count($games) == 0)
                             <p>Er zijn momenteel geen wedstrijden.</p>
                         @else
-                        <h2>Algemene League</h2>
+                        <h2>Main League</h2>
 
                         <div class="widget-content">
 
-                            <!--match mdw-->
+                            <!--wedstrijd tab-->
                             @foreach ($games as $game)
                                 <div class="mnajiri">
                                     <a class="fullink" href="#"></a>
@@ -48,45 +48,6 @@
                                 </div>
                             @endforeach
                         @endif
-
-{{--                            <!--match mdw-->--}}
-{{--                            <div class="mnajiri">--}}
-{{--                                <a class="fullink" href="#"></a>--}}
-{{--                                <div class="mnajiriin">--}}
-{{--                                    <div class="mpart1">--}}
-{{--                                        <div class="right_match">--}}
-{{--                                            <span class="right_tech">--}}
-{{--                                               <img src="https://1.bp.blogspot.com/-Sy8KMWfGjgM/XO94YxfPRZI/AAAAAAAAF2k/o7ry2Vm2GJEBjQcnOwMLDJZ8I423WTcGgCEwYBhgL/s1600/u.png">--}}
-{{--                                                <div class="fname">ليفربول</div>--}}
-{{--                                             </span>--}}
-{{--                                        </div>--}}
-{{--                                        <strong class="najiri2">شوط 1</strong>--}}
-{{--                                        <div class="left_match">--}}
-{{--                                             <span class="left_tech">--}}
-{{--                                               <img src="https://1.bp.blogspot.com/-tPibRsTPCD8/XO93jyQudZI/AAAAAAAAF2Q/DIGITySC8jksEBnRuz5nFtREIl-09Y3aQCEwYBhgL/s1600/c.png">--}}
-{{--                                                 <div class="fname">برايتون</div>--}}
-{{--                                             </span>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="details_match">--}}
-{{--                                        <span class="first_match">--}}
-{{--                                           <i aria-hidden="true" class="fa fa-clock-o"></i><b>جارية الأن</b>--}}
-{{--                                         </span>--}}
-{{--                                        <span class="thany"><i aria-hidden="true" class="fa fa-futbol-o"></i><b>الدوري الانجليزي</b></span>--}}
-{{--                                        <span class="liga_mdw"><i aria-hidden="true" class="fa fa-desktop"></i><b>Bein Sport HD1</b></span>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-
-                            {{--                    <div class="teams">--}}
-{{--                        @if (count($teams) == 0)--}}
-{{--                            <p>Er zijn geen teams</p>--}}
-{{--                        @else--}}
-{{--                            @foreach ($teams as $team)--}}
-{{--                                    <p>{{ $team->name }}</p>--}}
-{{--                            @endforeach--}}
-{{--                        @endif--}}
-{{--                    </div>--}}
                 </div>
             </div>
         </div>
