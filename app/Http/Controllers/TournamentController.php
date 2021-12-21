@@ -7,7 +7,10 @@ use App\Models\Game;
 use App\Models\Team;
 use App\Http\Controllers\Fixture;
 use App\Models\User;
+use Carbon\Carbon;
+use DateTime;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\Http;
 
 class TournamentController extends Controller
@@ -41,6 +44,24 @@ class TournamentController extends Controller
             array_push($fields, $field->id);
         }
 
+        $fieldTimeSlots = array();
+        $timeSlotCount = 8;
+        foreach ($fields as $field){
+            $currentTime = Carbon::now();
+            $currentTime->setHours(10);
+            $currentTime->setMinutes(0);
+            $currentTime->setSecond(0);
+            $timeSlots = array();
+
+            for ($i = 1; $i <= $timeSlotCount; $i++) {
+                array_push($timeSlots, $currentTime->format('Y-m-d H:i:s'));
+                $currentTime->addHour();
+                $currentTime->addMinutes(30);
+            }
+
+            $fieldTimeSlots[$field] = $timeSlots;
+        }
+
         $dbTeams = Team::all();
         $teams = array();
 
@@ -53,19 +74,26 @@ class TournamentController extends Controller
         $i = 1;
         foreach($games as $rounds){
             $game = new Game();
+            $field = $fields[array_rand($fields, 1)];
+            $referee = $users[array_rand($users, 1)];
+            $curFieldTimeSlots = $fieldTimeSlots[$field];
+            $gameTimeSlot = $curFieldTimeSlots[array_rand($curFieldTimeSlots, 1)];
+
             $game->round_num = $i;
-            $game->field_id = $fields[array_rand($fields, 1)];
-            $game->referee_id = $users[array_rand($users, 1)];
+            $game->field_id = $field;
+            $game->referee_id = $referee;
+            $game->datetime = $gameTimeSlot;
             foreach($rounds as $match){
                 $game->team1_id = $match[0];
                 $game->team2_id = $match[1];
             }
+
+            unset($gameTimeSlot);
             $game->save();
             $i++;
         }
 
         return redirect(route('tournaments'));
-
     }
 
 }
