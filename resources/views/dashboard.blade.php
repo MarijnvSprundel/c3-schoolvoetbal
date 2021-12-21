@@ -26,14 +26,14 @@
                                             <div class="right_match">
                                               <span class="right_tech">
                                                  <img src="img/jersey_icon_2.png">
-                                                  <div class="fname">{{ $game->team1->name }}</div>
+                                                  <div class="fname">{{ $game->team_1->name }}</div>
                                                </span>
                                             </div>
                                             <strong class="najiri1">{{ $game->datetime == null ? "n.v.t." : date("H:i", strtotime($game->datetime)) }}</strong>
                                             <div class="left_match">
                                                <span class="left_tech">
                                                  <img src="img/jersey_icon_1.png">
-                                                   <div class="fname">{{ $game->team2->name }}</div>
+                                                   <div class="fname">{{ $game->team_2->name }}</div>
                                                </span>
                                             </div>
                                         </div>

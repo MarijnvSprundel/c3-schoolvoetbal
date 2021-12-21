@@ -21,10 +21,10 @@ class Game extends Model
         'referee_id',
     ];
 
-    public function team1(){
+    public function team_1(){
         return $this->hasOne(Team::class, 'id', 'team1_id');
     }
-    public function team2(){
+    public function team_2(){
         return $this->hasOne(Team::class, 'id', 'team2_id');
     }
     public function field(){

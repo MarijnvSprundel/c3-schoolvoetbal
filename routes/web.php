@@ -31,6 +31,8 @@ Route::view('/profile', 'profile')->name('profile');
 
 Route::get('/tournaments', [TournamentController::class, 'index'])->middleware(['auth'])->name('tournaments');
 
+Route::get('/tournaments/generate', [TournamentController::class, 'generateGames'])->middleware(['auth'])->name('tournaments.generate');
+
 Route::resource('/teams', TeamsController::class);
 
 Route::resource('/admin', AdminController::class)->middleware(['auth']);
