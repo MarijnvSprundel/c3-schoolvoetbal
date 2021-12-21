@@ -15,9 +15,10 @@ class Game extends Model
         'team2_id',
         'team1_score',
         'team2_score',
+        'round_num',
+        'datetime',
         'field_id',
         'referee_id',
-        'datetime',
     ];
 
     public function team1(){
