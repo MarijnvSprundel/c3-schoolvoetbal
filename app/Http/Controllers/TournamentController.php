@@ -9,6 +9,7 @@ use App\Http\Controllers\Fixture;
 use App\Models\User;
 use Carbon\Carbon;
 use DateTime;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\Http;
@@ -93,6 +94,31 @@ class TournamentController extends Controller
             $i++;
         }
 
+        return redirect(route('tournaments'));
+    }
+
+    public function edit($id){
+        $tournament = Game::findOrFail($id);
+        return view('tournaments/edit')->with('tournament', $tournament);
+    }
+
+    public function update(Request $request, $id){
+        $tournament = Game::findOrFail($id);
+        $request->validate([
+            "team_1_score"=>"required",
+            "team_2_score"=>"required",
+            "field_id"=>"required"
+        ]);
+        $tournament->team1_score=$request->team_1_score;
+        $tournament->team2_score=$request->team_2_score;
+        $tournament->field_id=$request->field_name;
+        $tournament->save();
+        return redirect(route('tournaments.edit', $id));
+    }
+
+    public function destroy($id){
+        $tournament = Game::findOrFail($id);
+        $tournament->delete();
         return redirect(route('tournaments'));
     }
 

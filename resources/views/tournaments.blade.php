@@ -34,12 +34,12 @@
                             </thead>
                             <tbody>
                                 @foreach($tournaments as $tournament)
-                                    <tr onclick="window.location.href = '{{route('admin.edit', $tournament->id)}}';">
+                                    <tr onclick="window.location.href = '{{route('tournaments.edit', $tournament->id)}}';">
                                         <td>{{$tournament->id}}</td>
                                         <td>{{$tournament->team_1->name}}</td>
                                         <td>{{$tournament->team_2->name}}</td>
-                                        <td>{{$tournament->team_1_score != null ? $tournament->team_1_score : "n.v.t"}}</td>
-                                        <td>{{$tournament->team_2_score != null ? $tournament->team_2_score : "n.v.t"}}</td>
+                                        <td>{{$tournament->team1_score != null ? $tournament->team1_score : "n.v.t"}}</td>
+                                        <td>{{$tournament->team2_score != null ? $tournament->team2_score : "n.v.t"}}</td>
                                         <td>{{$tournament->field->name}}</td>
                                         <td>{{$tournament->referee->name}}</td>
                                         <td>{{ $tournament->datetime == null ? "n.v.t." : date("H:i", strtotime($tournament->datetime)) }}</td>

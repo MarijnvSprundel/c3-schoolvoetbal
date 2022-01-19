@@ -37,4 +37,10 @@ Route::resource('/teams', TeamsController::class);
 
 Route::resource('/admin', AdminController::class)->middleware(['auth']);
 
+Route::get('/tournaments/{id}/edit', [TournamentController::class, 'edit'])->middleware(['auth'])->name('tournaments.edit');
+
+Route::put('/tournaments/{id}/update', [TournamentController::class, 'update'])->middleware(['auth'])->name('tournaments.update');
+
+Route::delete('/tournaments/{id}/destroy', [TournamentController::class, 'destroy'])->middleware(['auth'])->name('tournaments.destroy');
+
 require __DIR__.'/auth.php';
